@@ -44,24 +44,24 @@ int main()
   S1 = fopen("S1.txt", "r");
   S2 = fopen("S2.txt", "w");
   while (!feof(S1)) {
-    // 1 iteration
+
     for(i = 0; i < 5; i++) {
         fscanf(S1, "%d\n", &y);
         fprintf(S2, "%d\n", y);
     }
-    // 2 iteration
+
     fseek(S1, 5*4, SEEK_CUR);
     for(i = 0; i < 5; i++) {
       fscanf(S1, "%d\n", &y);
       fprintf(S2, "%d\n", y);
     }
-    // 3 iteration
+
     fseek(S1, ftell(S1)-5*5-5*4, SEEK_SET);
     for(i = 0; i < 5; i++) {
       fscanf(S1, "%d\n", &y);
       fprintf(S2, "%d\n", y);
     }
-    // 4 iteration
+
     fseek(S1, 5*5, SEEK_CUR);
     for(i = 0; i < 5; i++) {
       fscanf(S1, "%d\n", &y);
