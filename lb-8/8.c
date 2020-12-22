@@ -14,27 +14,17 @@ struct employee {
 
 struct employee employees[50];
 int recordNumber;
-
-// general menu
 void printGeneralMenu();
-// case 1
 void enterEmployeeData();
-//case 2
 void sortingEmployeeData();
-//case 3
 void findEmployees();
-//case 4
 void editEmployees();
 void editEmployee(int);
 void print4Menu(int);
-// case 5
 void removeEmployee();
-//case 6
 void printEmployees(char[]);
 void print6Menu();
-//case 7
 void exitProgram();
-
 int main() {
     setlocale(LC_ALL, "");
     printGeneralMenu();
@@ -84,13 +74,11 @@ void printGeneralMenu() {
             break;
         }
     }
-    
-    //show general menu again
     printGeneralMenu();
 }
 
 void print6Menu() {
-    printf("\nЧего пожелаете, господин?\n");
+    printf("\nЧто  пожелаете?\n");
     printf(" 1 - Выход в главное меню;\n");
     printf(" 0 - Выход из программы.\n");
     printf("Введите номер желаемой операции: ");
@@ -111,7 +99,6 @@ void print6Menu() {
 }
 
 void enterEmployeeData() {
-    // clear data array first
     memset(employees, 0, sizeof(employees));
     
     system("clear");
@@ -155,7 +142,7 @@ void findEmployees() {
     scanf("%s", searchLine);
     printEmployees(searchLine);
     
-    printf("\nЧего пожелаете, господин?\n");
+    printf("\nЧто пожелаете?\n");
     printf(" 1 - Поиск совпадений;\n");
     printf(" 0 - Выход в главное меню.\n");
     printf("Введите номер желаемой операции: ");
@@ -208,7 +195,7 @@ void editEmployee(int i) {
 }
 
 void print4Menu(int i) {
-    printf("\nЧего пожелаете, господин?\n");
+    printf("\nЧто пожелаете?\n");
     printf(" 1 - Изменить фамилию;\n");
     printf(" 2 - Изменить имя;\n");
     printf(" 3 - Изменить отчество;\n");
@@ -338,7 +325,6 @@ void exitProgram() {
     char answer = 'n';
     scanf("%s", &answer);
     if (answer == 'y') {
-        // program exit
         exit(0);
     }
 }
